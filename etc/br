@@ -1,0 +1,68 @@
+#!/bin/sh
+
+if [ "$JAVA_HOME" == "" ]; then
+  echo JAVA_HOME not defined
+  exit 1
+fi
+
+if [ "$BUDGETREADER_HOME" == "" ]; then
+  echo BUDGETREADER_HOME not defined
+  exit 1
+fi
+
+CLASSPATH=$BUDGETREADER_HOME/budgetreader.d
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/budgetreader.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/commons-logging-1.1.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/commons-cli-1.2.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/log4j-1.2.14.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/mail.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aop-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aop-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aop-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aspects-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aspects-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-aspects-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-beans-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-beans-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-beans-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-build-src-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-support-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-support-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-context-support-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-core-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-core-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-core-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-expression-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-expression-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-expression-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-tomcat-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-tomcat-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-instrument-tomcat-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jdbc-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jdbc-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jdbc-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jms-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jms-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-jms-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-orm-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-orm-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-orm-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-oxm-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-oxm-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-oxm-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-struts-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-struts-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-struts-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-test-3.2.3.RELEASE.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-test-3.2.3.RELEASE-javadoc.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-test-3.2.3.RELEASE-sources.jar
+CLASSPATH=$CLASSPATH:$BUDGETREADER_HOME/budgetreader.d/spring-tx-3.2.3.RELEASE.jar
+
+CMD="$JAVA_HOME/bin/java -classpath $CLASSPATH -Xmx128m budgetreader.BudgetReader $@"
+eval $CMD
